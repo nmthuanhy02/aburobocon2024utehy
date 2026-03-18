@@ -8,6 +8,15 @@
 
 <h1>Xin chào</h1>
 <p>Website đầu tiên của tôi</p>
+<h3>Lượt truy cập: <span id="visits">0</span></h3>
+
+<script>
+fetch('https://api.countapi.xyz/hit/aburobocon2024utehy/visits')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("visits").innerText = data.value;
+  });
+</script>
 
 </body>
 </html>
