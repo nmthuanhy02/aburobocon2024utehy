@@ -22,18 +22,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Mobile Blog</title>
+<title>Scroll Blur Effect</title>
 
 <style>
 body, html {
   margin: 0;
   padding: 0;
+  height: 200vh; /* tạo scroll */
   font-family: Arial;
-  background: #0f0f0f;
-  color: white;
 }
 
-/* Background */
+/* Ảnh nền */
 #bg {
   position: fixed;
   top: 0;
@@ -41,62 +40,31 @@ body, html {
   width: 100%;
   height: 100%;
 
-  background: url("https://raw.githubusercontent.com/nmthuanhy02/aburobocon2024utehy/main/480841794_647185004633403_3122103004893403758_n.jpg") no-repeat center;
+  background: url("https://picsum.photos/1200/800") no-repeat center;
   background-size: cover;
 
-  z-index: -2;
+  z-index: -1;
   transition: filter 0.2s;
 }
 
-/* Overlay */
-#bg-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-
-  background: radial-gradient(
-    circle at center,
-    rgba(0,0,0,0) 30%,
-    rgba(0,0,0,0.4) 80%
-  );
-
-  transition: 0.2s;
-}
-
-/* Layout mobile */
-.phone {
-  max-width: 420px;
-  margin: auto;
-  position: relative;
-  z-index: 2;
-}
-
-/* Header */
-.header {
+/* Ảnh chính ở trên */
+.hero {
   height: 100vh;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  text-align: center;
 }
 
-/* Card */
-.card {
-  backdrop-filter: blur(20px);
-  background: rgba(255,255,255,0.08);
+.hero img {
+  width: 90%;
+  max-width: 500px;
   border-radius: 20px;
-  padding: 20px;
-  margin: 20px;
 }
 
-/* Image */
-img {
-  width: 100%;
-  border-radius: 15px;
+/* Nội dung dưới */
+.content {
+  padding: 40px;
+  font-size: 20px;
 }
 </style>
 
@@ -104,59 +72,34 @@ img {
 
 <body>
 
-<!-- BACKGROUND -->
+<!-- Background -->
 <div id="bg"></div>
-<div id="bg-overlay"></div>
 
-<!-- CONTENT -->
-<div class="phone">
+<!-- Ảnh chính -->
+<div class="hero">
+  <img src="https://picsum.photos/500/300">
+</div>
 
-  <div class="header">
-    <h1>🌙 My Blog</h1>
-    <p>Dark mode + Glass UI</p>
-  </div>
-
-  <div class="card">
-    <h2>Bài viết 1</h2>
-    <p>Nội dung ở đây...</p>
-    <img src="https://picsum.photos/400/300">
-  </div>
-
-  <div class="card">
-    <h2>Bài viết 2</h2>
-    <p>Scroll xuống để thấy hiệu ứng...</p>
-  </div>
-
+<!-- Nội dung để scroll -->
+<div class="content">
+  <p>Scroll xuống để thấy hiệu ứng blur...</p>
+  <p>Lorem ipsum dolor sit amet...</p>
+  <p>Thêm nội dung cho dài...</p>
+  <p>Thêm nội dung cho dài...</p>
+  <p>Thêm nội dung cho dài...</p>
+  <p>Thêm nội dung cho dài...</p>
 </div>
 
 <script>
 window.addEventListener("scroll", function() {
   let scroll = window.scrollY;
-  let max = window.innerHeight;
 
-  // Giới hạn blur
-  let blur = Math.min(scroll / 40, 10);
+  // blur tăng dần khi scroll
+  let blur = Math.min(scroll / 50, 15);
 
-  // Giới hạn độ tối
-  let dark = Math.min(scroll / max, 0.4);
-
-  let bg = document.getElementById("bg");
-  let overlay = document.getElementById("bg-overlay");
-
-  bg.style.filter = "blur(" + blur + "px)";
-
-  overlay.style.background = `
-    radial-gradient(
-      circle at center,
-      rgba(0,0,0,0) 30%,
-      rgba(0,0,0,${0.4 + dark}) 80%
-    )
-  `;
+  document.getElementById("bg").style.filter = "blur(" + blur + "px)";
 });
 </script>
-
-</body>
-</html>
 
 </body>
 </html>
