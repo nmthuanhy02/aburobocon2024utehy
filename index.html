@@ -45,7 +45,7 @@ body, html {
   z-index: -2;
 }
 
-/* Lớp làm mờ 2 bên */
+/* Overlay làm mờ 2 bên */
 #bg-overlay {
   position: fixed;
   top: 0;
@@ -58,13 +58,13 @@ body, html {
   background: radial-gradient(
     circle at center,
     rgba(0,0,0,0) 30%,
-    rgba(0,0,0,0.6) 80%
+    rgba(0,0,0,0.4) 80%
   );
 
   transition: 0.3s;
 }
 
-/* Fake phone frame */
+/* Layout mobile */
 .phone {
   max-width: 420px;
   margin: auto;
@@ -72,11 +72,16 @@ body, html {
   z-index: 2;
 }
 
+/* Header full màn hình */
 .header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
-  padding: 120px 20px 40px;
 }
 
+/* Card */
 .card {
   backdrop-filter: blur(20px);
   background: rgba(255,255,255,0.08);
@@ -85,28 +90,10 @@ body, html {
   margin: 20px;
 }
 
-/* Header */
-.header {
-  text-align: center;
-  padding: 100px 20px 40px;
-}
-
-/* Glass card */
-
-/* Button */
-button {
-  background: rgba(255,255,255,0.1);
-  border: none;
-  padding: 10px 20px;
-  border-radius: 10px;
-  color: white;
-}
-
 /* Image */
 img {
   width: 100%;
   border-radius: 15px;
-  margin-top: 10px;
 }
 </style>
 
@@ -114,8 +101,11 @@ img {
 
 <body>
 
+<!-- BACKGROUND -->
 <div id="bg"></div>
+<div id="bg-overlay"></div>
 
+<!-- CONTENT -->
 <div class="phone">
 
   <div class="header">
@@ -158,7 +148,6 @@ window.addEventListener("scroll", function() {
   `;
 });
 </script>
-<div id="bg"></div>
-<div id="bg-overlay"></div>
+
 </body>
 </html>
