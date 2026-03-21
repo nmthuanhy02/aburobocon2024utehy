@@ -54,9 +54,76 @@ body, html {
 
 /* Ảnh chính ở trên */
 /* PANEL ĐEN-XANH */
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scroll Blur Effect</title>
+
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 250vh;
+  font-family: Arial;
+  color: orange; /* 👈 chữ màu cam */
+}
+
+/* MENU */
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.menu a {
+  flex: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: rgba(255,165,0,0.2);
+  color: orange;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  background: orange;
+  color: black;
+}
+
+/* Background */
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: url("https://raw.githubusercontent.com/nmthuanhy02/aburobocon2024utehy/main/480841794_647185004633403_3122103004893403758_n.jpg") no-repeat center;
+  background-size: cover;
+  background-position: center 70%;
+
+  z-index: -1;
+  transition: filter 0.2s;
+}
+
+/* PANEL */
 #panel {
   position: absolute;
-  top: 100vh; /* xuất hiện sau khi scroll */
+  top: 100vh;
   left: 50%;
   transform: translateX(-50%);
 
@@ -77,10 +144,19 @@ body, html {
   transition: opacity 0.5s;
 }
 
-/* Nội dung */
-.content {
-  font-size: 20px;
-  line-height: 1.6;
+/* SECTION */
+.section {
+  margin-bottom: 60px;
+}
+
+h2 {
+  border-left: 4px solid orange;
+  padding-left: 10px;
+}
+
+/* tránh bị menu che */
+.anchor {
+  scroll-margin-top: 70px;
 }
 </style>
 
@@ -88,20 +164,39 @@ body, html {
 
 <body>
 
+<!-- MENU -->
+<div class="menu">
+  <a href="#gioithieu">Giới thiệu</a>
+  <a href="#hanhtrinh">Hành trình</a>
+  <a href="#thanhcong">Thành tích</a>
+  <a href="#hientai">Hiện tại</a>
+</div>
+
 <div id="bg"></div>
 
 <!-- PANEL -->
 <div id="panel">
-  <div class="content">
-    <h2>SKH CK1 ĐOÀN KÊT - TỰ TIN - CHIẾN THẮNG</h2>
-    <p>Nội dung bắt đầu từ đây...</p>
-    <p>Scroll tiếp để thấy panel kéo dài...</p>
-    <p>Lorem ipsum dolor sit amet...</p>
-    <p>Thêm nội dung...</p>
-    <p>Thêm nội dung...</p>
-    <p>Thêm nội dung...</p>
-    <p>Thêm nội dung...</p>
+
+  <div id="gioithieu" class="section anchor">
+    <h2>Giới thiệu đội tuyển</h2>
+    <p>Đội tuyển Robocon SKH-CK1 được thành lập năm 2023...</p>
   </div>
+
+  <div id="hanhtrinh" class="section anchor">
+    <h2>Quá trình biến giấc mơ thành hiện thực</h2>
+    <p>Khâu ý tưởng, thử nghiệm...</p>
+  </div>
+
+  <div id="thanhcong" class="section anchor">
+    <h2>Những nỗ lực thi đấu</h2>
+    <p>Tham dự cuộc thi Sáng tạo Robot Việt Nam 2024...</p>
+  </div>
+
+  <div id="hientai" class="section anchor">
+    <h2>Các thành viên hiện tại</h2>
+    <p>Danh sách thành viên...</p>
+  </div>
+
 </div>
 
 <script>
@@ -116,7 +211,7 @@ window.addEventListener("scroll", function() {
   let blur = Math.min(scroll / 60, 12);
   bg.style.filter = "blur(" + blur + "px)";
 
-  // Khi scroll qua 30% màn hình → hiện panel
+  // Hiện panel
   if (scroll > max * 0.3) {
     panel.style.opacity = 1;
   } else {
@@ -124,9 +219,6 @@ window.addEventListener("scroll", function() {
   }
 });
 </script>
-
-</body>
-</html>
 
 </body>
 </html>
