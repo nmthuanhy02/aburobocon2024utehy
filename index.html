@@ -53,23 +53,34 @@ body, html {
 }
 
 /* Ảnh chính ở trên */
-.hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+/* PANEL ĐEN-XANH */
+#panel {
+  position: absolute;
+  top: 100vh; /* xuất hiện sau khi scroll */
+  left: 50%;
+  transform: translateX(-50%);
 
-.hero img {
-  width: 90%;
-  max-width: 500px;
+  width: 80%;
+  min-height: 150vh;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 20, 40, 0.85),
+    rgba(0, 10, 25, 0.95)
+  );
+
+  backdrop-filter: blur(10px);
   border-radius: 20px;
+  padding: 40px;
+
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 
-/* Nội dung dưới */
+/* Nội dung */
 .content {
-  padding: 40px;
   font-size: 20px;
+  line-height: 1.6;
 }
 </style>
 
@@ -77,33 +88,45 @@ body, html {
 
 <body>
 
-<!-- Background -->
 <div id="bg"></div>
 
-<!-- Ảnh chính -->
-<div class="hero">
-</div>
-
-<!-- Nội dung để scroll -->
-<div class="content">
-  <p>Scroll xuống để thấy hiệu ứng blur...</p>
-  <p>Lorem ipsum dolor sit amet...</p>
-  <p>Thêm nội dung cho dài...</p>
-  <p>Thêm nội dung cho dài...</p>
-  <p>Thêm nội dung cho dài...</p>
-  <p>Thêm nội dung cho dài...</p>
+<!-- PANEL -->
+<div id="panel">
+  <div class="content">
+    <h2>Tiêu đề</h2>
+    <p>Nội dung bắt đầu từ đây...</p>
+    <p>Scroll tiếp để thấy panel kéo dài...</p>
+    <p>Lorem ipsum dolor sit amet...</p>
+    <p>Thêm nội dung...</p>
+    <p>Thêm nội dung...</p>
+    <p>Thêm nội dung...</p>
+    <p>Thêm nội dung...</p>
+  </div>
 </div>
 
 <script>
 window.addEventListener("scroll", function() {
   let scroll = window.scrollY;
+  let max = window.innerHeight;
 
-  // blur tăng dần khi scroll
-  let blur = Math.min(scroll / 50, 15);
+  let bg = document.getElementById("bg");
+  let panel = document.getElementById("panel");
 
-  document.getElementById("bg").style.filter = "blur(" + blur + "px)";
+  // Blur background
+  let blur = Math.min(scroll / 60, 12);
+  bg.style.filter = "blur(" + blur + "px)";
+
+  // Khi scroll qua 30% màn hình → hiện panel
+  if (scroll > max * 0.3) {
+    panel.style.opacity = 1;
+  } else {
+    panel.style.opacity = 0;
+  }
 });
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
