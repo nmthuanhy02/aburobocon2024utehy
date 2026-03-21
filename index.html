@@ -77,15 +77,17 @@ body, html {
 /* MENU */
 .menu {
   position: fixed;
-  top: 0;
-  width: 100%;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  
   display: flex;
-  overflow-x: auto;
   gap: 10px;
-  padding: 10px;
+  padding: 10px 20px;
+
   background: rgba(0,0,0,0.7);
+  border-radius: 30px;
   backdrop-filter: blur(10px);
-  z-index: 10;
 }
 
 .menu a {
@@ -169,7 +171,7 @@ h2 {
   <a href="#gioithieu">Giới thiệu</a>
   <a href="#hanhtrinh">Hành trình</a>
   <a href="#thanhcong">Thành tích</a>
-  <a href="#hientai">Hiện tại</a>
+  <a href="#hientai">Thành viên</a>
 </div>
 
 <div id="bg"></div>
