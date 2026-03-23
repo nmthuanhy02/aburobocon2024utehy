@@ -212,15 +212,15 @@ h2 {
   </div>\
   
   <div id="thanhcong" class="section anchor">
-  <h2>Những nỗ lực thi đấu</h2>
-  <div id="thanhcong-content"></div>
-</div>
-
-  <div id="thanhcong" class="section anchor">
     <h2>Những nỗ lực thi đấu</h2>
-    <p>Tham dự cuộc thi Sáng tạo Robot Việt Nam 2024...</p>
+    <div id="thanhcong-content"></div>
   </div>
-
+  
+    <div id="abu" class="section anchor">
+    <h2>Trở thành đại diện Việt Nam tham dự ABU Robocon Châu Á - Thái Bình Dương</h2>
+    <div id="abu-content"></div>
+  </div>
+  
   <div id="hientai" class="section anchor">
     <h2>Các thành viên hiện tại</h2>
     <p>Danh sách thành viên...</p>
@@ -249,8 +249,9 @@ window.addEventListener("scroll", function() {
 });
 // ===== NỘI DUNG CÓ THỂ SỬA Ở ĐÂY =====
 const gioiThieuContent = `
-Đội tuyển SKH-CK1 chính thức được khai sinh vào cuối năm 2023, theo quyết định thành lập các đội hình nòng cốt tham dự Cuộc thi Sáng tạo Robot Việt Nam 2024 của trường ĐH SPKT Hưng Yên. Sánh bước cùng những người anh em SKH Tech, Automation, Phoenix và Asio, SKH-CK1 là sự hội tụ của 14 'chiến binh' ưu tú thuộc khóa 18 từ hai khoa Điện - Điện tử và Cơ khí. Dưới sự dẫn dắt của 'người thầy dày dạn trận mạc' – TS. Nguyễn Anh Tuấn, giảng viên khoa Cơ khí với hơn 20 năm kinh nghiệm chinh chiến, tập thể SKH-CK1 đã đồng lòng viết nên một trong những chương chói lọi nhất trong lịch sử Robocon của nhà trường.
+Đội tuyển SKH CK1 chính thức được khai sinh vào cuối năm 2023, theo quyết định thành lập các đội hình nòng cốt tham dự Cuộc thi Sáng tạo Robot Việt Nam 2024 của trường Đại học Sư phạm Kỹ thuật Hưng Yên. Sánh bước cùng những người anh em SKH Tech, Automation, Phoenix và Asio, SKH-CK1 là sự hội tụ của 14 'chiến binh' ưu tú thuộc khóa 18 từ hai khoa Điện - Điện tử và Cơ khí. Dưới sự dẫn dắt của 'người thầy dày dạn trận mạc' – TS. Nguyễn Anh Tuấn, giảng viên khoa Cơ khí với hơn 20 năm kinh nghiệm chinh chiến, tập thể SKH-CK1 đã đồng lòng viết nên một trong những chương chói lọi nhất trong lịch sử Robocon của nhà trường.
 `;
+  
 const luatChoiHTML = `
 <h3>1. Chủ đề: "Ngày mùa" (Harvest Day)</h3>
 <p>Lấy ý tưởng từ việc canh tác lúa trên các thửa ruộng bậc thang, tôn vinh nét văn hóa nông nghiệp của Việt Nam.</p>
@@ -302,6 +303,7 @@ const luatChoiHTML = `
 
 <p>⏱️ Thời gian: tối đa 3 phút. Nếu không có "Mùa vàng", đội nhiều điểm hơn thắng.</p>
 `;
+  
   const thanhCongHTML = `
 <p><b>Ngày 4/5/2024</b>,  Vòng loại Robocon toàn quốc chính thức khởi tranh, 64 đội tuyển đến từ các trường đại học, cao đẳng khắp cả nước sẽ thi đấu độc lập để chọn ra 32 đội có thành tích tốt nhất tham dự vòng chung kết.</p>
 
@@ -329,10 +331,57 @@ Với thành tích này, SKH CK1 chính thức trở thành Việt Nam 2, cùng 
 Hành trình của SKH CK1 tại Robocon 2024 không chỉ là câu chuyện về những con số hay kỹ thuật, mà là biểu tượng cho tinh thần bền bỉ và sự thống trị tuyệt đối của ngôi trường kỹ thuật mang tên Hưng Yên trong mùa giải năm ấy.
 </b>.</p>
 `;
+
+ const luatChoiHTML = `
+ <p>Sau khi xuất sắc ghi tên mình vào lịch sử với tư cách là một trong hai đại diện ưu tú nhất của Việt Nam tham dự Vòng chung kết Robocon Châu Á - Thái Bình Dương (ABU Robocon 2024), SKH CK1 chính thức khoác lên mình màu cờ sắc áo mới với tên gọi: Đội tuyển Việt Nam 2.</p>
+<p>Đứng trước ngưỡng cửa của đấu trường quốc tế, đội đã nhận được sự tin tưởng và đầu tư mạnh mẽ chưa từng có. Không chỉ dừng lại ở việc bổ sung những nhân sự kỹ thuật tinh nhuệ nhất từ nhà trường, một nguồn ngân sách lớn cũng đã được rót vào để thực hiện chiến dịch "tái cấu trúc" toàn diện. Những bộ khung cơ khí được tối ưu hóa bằng vật liệu siêu nhẹ, hệ thống điều khiển được nâng cấp với các thuật toán AI tiên tiến nhất, giúp robot đạt đến độ chính xác và tốc độ vượt trội.</p>
+<p>Với sự hậu thuẫn vững chắc về nguồn lực và một tinh thần thép đã được tôi luyện qua những trận đấu nghẹt thở trong nước, Việt Nam 2 không tới Quảng Ninh chỉ để giao lưu. Toàn đội tiến về phía trước với một mục tiêu duy nhất, một khát khao cháy bỏng: Chinh phục đỉnh cao cao nhất – Chiếc cúp vô địch ABU Robocon 2024.
+</p>
+
+<h3>1. Giai đoạn Test-run: Bước khởi động cần thiết</h3>
+<div class="box">
+<p><b>Thử thách:</b> Thử thách: Sân thi đấu quốc tế có độ phẳng và ánh sáng khác biệt so với sân tập tại Hưng Yên. Hệ thống xử lý ảnh (AI) của Robot 2 cần được tinh chỉnh liên tục để nhận diện chính xác hạt thóc trong điều kiện ánh sáng nhà thi đấu đa năng tỉnh Quảng Ninh.</p>
+<p><b>Cải tiến:</b> Nhóm kỹ thuật đã làm việc xuyên đêm để trainning lại robot với hơn 5000 bức ảnh, giúp tối ưu hóa thuật toán di chuyển, đảm bảo Robot 2 có thể phân biệt màu thóc chính xác, nhanh nhóng ghi điểm tạo lợi thế </p>
+</div>
+
+<h3>2. Vòng bảng: Khẳng định sức mạnh chủ nhà</h3>
+<div class="box">
+<ul>
+  <li>Chiến thắng "Mùa vàng" dưới 150 giây</li>
+  <li>Chiếm lĩnh silo nhanh chóng</li>
+  <li>Tiến vào tứ kết với phong độ hủy diệt</li>
+</ul>
+</div>
+
+<h3>3. Tứ kết & Bán kết</h3>
+<div class="box">
+<p><b>Tứ kết:</b> Thắng nhờ hệ thống cơ khí ổn định.</p>
+
+<p><b>Bán kết (Nội chiến Việt Nam):</b></p>
+<ul>
+  <li>SKH CK1 vs SKH AUTOMATION</li>
+  <li>Trận đấu cực kỳ căng thẳng</li>
+  <li>Liên tục chặn "Mùa vàng"</li>
+</ul>
+
+<p>Kết quả: dừng bước với cách biệt rất nhỏ.</p>
+</div>
+
+<h3>4. Kết quả chung cuộc</h3>
+<div class="box highlight">
+<ul>
+  <li>🥉 Giải Ba (đồng hạng Nhật Bản)</li>
+  <li>🏆 Giải thưởng đặc biệt ABU Award</li>
+</ul>
+</div>
+`;
+
+document.getElementById("quocte-content").innerHTML = quocTeHTML;
 // ===== GÁN NỘI DUNG =====
 document.getElementById("gioithieu-text").innerText = gioiThieuContent;
 document.getElementById("luatchoi-content").innerHTML = luatChoiHTML;
-  document.getElementById("thanhcong-content").innerHTML = thanhCongHTML;
+document.getElementById("thanhcong-content").innerHTML = thanhCongHTML;
+  
 </script>
 
 </body>
