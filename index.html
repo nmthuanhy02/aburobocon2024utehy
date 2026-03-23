@@ -162,6 +162,25 @@ h2 {
 .anchor {
   scroll-margin-top: 70px;
 }
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  color: orange;
+}
+.table th, .table td {
+  border: 1px solid rgba(255,165,0,0.3);
+  padding: 10px;
+  text-align: left;
+}
+
+.table th {
+  background: rgba(255,165,0,0.2);
+}
+
+.table tr:hover {
+  background: rgba(255,165,0,0.1);
+}
 </style>
 
 </head>
@@ -232,9 +251,60 @@ window.addEventListener("scroll", function() {
 const gioiThieuContent = `
 Đội tuyển SKH-CK1 chính thức được khai sinh vào cuối năm 2023, theo quyết định thành lập các đội hình nòng cốt tham dự Cuộc thi Sáng tạo Robot Việt Nam 2024 của trường ĐH SPKT Hưng Yên. Sánh bước cùng những người anh em SKH Tech, Automation, Phoenix và Asio, SKH-CK1 là sự hội tụ của 14 'chiến binh' ưu tú thuộc khóa 18 từ hai khoa Điện - Điện tử và Cơ khí. Dưới sự dẫn dắt của 'người thầy dày dạn trận mạc' – TS. Nguyễn Anh Tuấn, giảng viên khoa Cơ khí với hơn 20 năm kinh nghiệm chinh chiến, tập thể SKH-CK1 đã đồng lòng viết nên một trong những chương chói lọi nhất trong lịch sử Robocon của nhà trường.
 `;
+const luatChoiContent = `
+<h3>1. Chủ đề: "Ngày mùa" (Harvest Day)</h3>
+<p>Lấy ý tưởng từ việc canh tác lúa trên các thửa ruộng bậc thang, tôn vinh nét văn hóa nông nghiệp của Việt Nam.</p>
 
+<h3>2. Sân thi đấu và Robot</h3>
+<ul>
+  <li>Sân thi đấu: Chia làm 3 vùng (Gieo mạ - Thu hoạch - Silo)</li>
+  <li>Đội hình:
+    <ul>
+      <li>Robot 1 (R1): Điều khiển hoặc tự động</li>
+      <li>Robot 2 (R2): Tự động hoàn toàn</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>3. Các giai đoạn và Cách tính điểm</h3>
+
+<table class="table">
+  <tr>
+    <th>Giai đoạn</th>
+    <th>Nhiệm vụ</th>
+    <th>Điểm</th>
+  </tr>
+  <tr>
+    <td>Giai đoạn 1</td>
+    <td>Trồng mạ vào Vùng 1</td>
+    <td>10 điểm / bó</td>
+  </tr>
+  <tr>
+    <td>Giai đoạn 2</td>
+    <td>Thu hoạch thóc</td>
+    <td>10 điểm / lần</td>
+  </tr>
+  <tr>
+    <td>Giai đoạn 3</td>
+    <td>Ném thóc vào Silo</td>
+    <td>30 điểm / hạt</td>
+  </tr>
+</table>
+
+<p><b>Lưu ý:</b> Số thóc ≤ số bó mạ đã trồng.</p>
+
+<h3>4. Chiến thắng "Mùa vàng"</h3>
+<ul>
+  <li>Ít nhất 3 Silo có thóc</li>
+  <li>Các Silo phải đầy</li>
+  <li>Thóc của đội nằm trên cùng</li>
+</ul>
+
+<p>⏱️ Thời gian: tối đa 3 phút. Nếu không có "Mùa vàng", đội nhiều điểm hơn thắng.</p>
+`;
 // ===== GÁN NỘI DUNG =====
 document.getElementById("gioithieu-text").innerText = gioiThieuContent;
+document.getElementById("luatchoi-text").innerText = luatChoiContent;
 </script>
 
 </body>
