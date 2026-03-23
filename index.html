@@ -183,7 +183,7 @@ h2 {
 
   <div id="gioithieu" class="section anchor">
     <h2>Giới thiệu đội tuyển</h2>
-    <p>Đội tuyển Robocon SKH-CK1 được thành lập năm 2023...</p>
+    <p id="gioithieu-text"></p> 
   </div>
 
   <div id="hanhtrinh" class="section anchor">
@@ -222,6 +222,23 @@ window.addEventListener("scroll", function() {
     panel.style.opacity = 0;
   }
 });
+  <script>
+// ===== NỘI DUNG CÓ THỂ SỬA Ở ĐÂY =====
+const gioiThieuContent = `
+Đội tuyển Robocon SKH-CK1 được thành lập vào ngày     năm 2023 dựa trên quyết định thành lập các đội tuyển tham dự Cuộc thi Sáng tạo Robot Việt Nam 2024 của trường ĐHSPKTHY.
+
+Cùng với những người anh em SKH Tech, SKH Automation, SKH Phoenix và SKH Asio.
+
+Đội tuyển hoạt động chính thức với 14 thành viên khóa 18, là sinh viên đến từ hai khoa Điện - Điện tử và khoa Cơ khí.
+
+SKH CK1 được dẫn dắt bởi chỉ đạo viên TS. Nguyễn Anh Tuấn - giảng viên khoa Cơ Khí, với hơn 20 năm kinh nghiệm chinh chiến trong sân chơi robocon.
+
+Tất cả đều đồng lòng phát huy hết sức khả năng mình cho một trong những mùa giải thành công nhất lịch sử nhà trường.
+`;
+
+// ===== GÁN NỘI DUNG =====
+document.getElementById("gioithieu-text").innerText = gioiThieuContent;
+</script>
 </script>
 
 </body>
