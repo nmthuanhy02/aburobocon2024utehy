@@ -241,6 +241,17 @@ h2 {
     grid-template-columns: 1fr;
   }
 }
+  @media (max-width: 600px) {
+  .menu {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .menu a {
+    flex: none;
+  }
+}
 </style>
 
 </head>
@@ -281,11 +292,6 @@ h2 {
     <div id="abu-content"></div>
   </div>
   
-  <!-- <div id="hientai" class="section anchor">
-    <h2>Các thành viên</h2>
-    <p>Uploading...</p>
-  </div> -->
-<!-- ===== THÀNH VIÊN ===== -->
 <div id="thanhvien" class="section anchor">
   <h2>Thành viên</h2>
 
