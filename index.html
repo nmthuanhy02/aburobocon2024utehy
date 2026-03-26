@@ -184,9 +184,8 @@ h2 {
   /* ===== MEMBERS ===== */
 .members {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  margin-top: 20px;
 }
 
 .card {
@@ -210,6 +209,18 @@ h2 {
 .card h3 {
   color: orange;
   margin: 10px 0 5px;
+}
+  /* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .members {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .members {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 
@@ -258,7 +269,13 @@ h2 {
 <!-- ===== THÀNH VIÊN ===== -->
 <div id="thanhvien" class="section anchor">
   <h2>Thành viên</h2>
+
+  <!-- CHỈ ĐẠO VIÊN -->
+  <div class="leaders" id="leaders"></div>
+
+  <!-- TEAM -->
   <div class="members" id="members"></div>
+
 </div>
 
 <script>
