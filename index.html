@@ -537,41 +537,24 @@ membersData.forEach(m => {
   `;
 });
 document.getElementById("members").innerHTML = membersHTML;
-
-// ===== RENDER =====
-let memberHTML = "";
-
-memberData.forEach(m => {
-  memberHTML += `
-    <div class="card">
-      <img src="${m.img}">
-      <h3>${m.name}</h3>
-      <p>${m.role}</p>
-    </div>
-  `;
-});
-
-document.getElementById("members").innerHTML = memberHTML;
-  function enableImageZoom() {
-  const images = document.querySelectorAll("img"); // 🔥 bắt TẤT CẢ ảnh
+function enableImageZoom() {
   const modal = document.getElementById("imgModal");
   const modalImg = document.getElementById("modalImg");
 
-  images.forEach(img => {
-    img.style.cursor = "pointer"; // hiện tay
-    img.addEventListener("click", () => {
+  document.body.addEventListener("click", function(e) {
+    if (e.target.tagName === "IMG") {
       modal.style.display = "flex";
-      modalImg.src = img.src;
-    });
+      modalImg.src = e.target.src;
+    }
   });
 
-  modal.addEventListener("click", () => {
+  modal.onclick = () => {
     modal.style.display = "none";
-  });
+  };
 }
 
-// ⚠️ vì bạn dùng innerHTML nên phải delay
-setTimeout(enableImageZoom, 200);
+// 👉 GỌI HÀM NGAY DƯỚI
+enableImageZoom();
   </script>
 <!-- ===== LƯỢT TRUY CẬP ===== -->
 <div style="text-align:center; margin:40px 0;">
