@@ -512,46 +512,46 @@ const membersData = [
   { name: "DOÃN TRUNG QUÝ", role: "Cơ khí", img: "https://via.placeholder.com/200" },
   { name: "ĐÀO BÌNH DƯƠNG", role: "Cơ khí", img: "https://via.placeholder.com/200" },
 ];
-  // leaders
-let leadersHTML = "";
-leadersData.forEach(m => {
-  leadersHTML += `
-    <div class="card">
-      <img src="${m.img}">
-      <h3>${m.name}</h3>
-      <p>${m.role}</p>
-    </div>
-  `;
-});
-document.getElementById("leaders").innerHTML = leadersHTML;
+//   // leaders
+// let leadersHTML = "";
+// leadersData.forEach(m => {
+//   leadersHTML += `
+//     <div class="card">
+//       <img src="${m.img}">
+//       <h3>${m.name}</h3>
+//       <p>${m.role}</p>
+//     </div>
+//   `;
+// });
+// document.getElementById("leaders").innerHTML = leadersHTML;
 
-// members
-let membersHTML = "";
-membersData.forEach(m => {
-  membersHTML += `
-    <div class="card ${m.isCaptain ? 'captain' : ''}">
-      <img src="${m.img}">
-      <h3>${m.name}</h3>
-      <p>${m.role}</p>
-    </div>
-  `;
-});
-document.getElementById("members").innerHTML = membersHTML;
+// // members
+// let membersHTML = "";
+// membersData.forEach(m => {
+//   membersHTML += `
+//     <div class="card ${m.isCaptain ? 'captain' : ''}">
+//       <img src="${m.img}">
+//       <h3>${m.name}</h3>
+//       <p>${m.role}</p>
+//     </div>
+//   `;
+// });
+// document.getElementById("members").innerHTML = membersHTML;
 
-// ===== RENDER =====
-let memberHTML = "";
+// // ===== RENDER =====
+// let memberHTML = "";
 
-memberData.forEach(m => {
-  memberHTML += `
-    <div class="card">
-      <img src="${m.img}">
-      <h3>${m.name}</h3>
-      <p>${m.role}</p>
-    </div>
-  `;
-});
+// memberData.forEach(m => {
+//   memberHTML += `
+//     <div class="card">
+//       <img src="${m.img}">
+//       <h3>${m.name}</h3>
+//       <p>${m.role}</p>
+//     </div>
+//   `;
+// });
 
-document.getElementById("members").innerHTML = memberHTML;
+// document.getElementById("members").innerHTML = memberHTML;
   function enableImageZoom() {
   const images = document.querySelectorAll("img"); // 🔥 bắt TẤT CẢ ảnh
   const modal = document.getElementById("imgModal");
