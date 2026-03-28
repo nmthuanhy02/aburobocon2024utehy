@@ -553,7 +553,7 @@ memberData.forEach(m => {
 
 document.getElementById("members").innerHTML = memberHTML;
 </div>
-function enableImageZoom() {
+  function enableImageZoom() {
   const images = document.querySelectorAll("img"); // 🔥 bắt TẤT CẢ ảnh
   const modal = document.getElementById("imgModal");
   const modalImg = document.getElementById("modalImg");
@@ -574,6 +574,12 @@ function enableImageZoom() {
 // ⚠️ vì bạn dùng innerHTML nên phải delay
 setTimeout(enableImageZoom, 200);
   </script>
+<!-- ===== LƯỢT TRUY CẬP ===== -->
+<div style="text-align:center; margin:40px 0;">
+  <h3>👁️ Lượt truy cập: 
+    <span id="busuanzi_value_site_pv">0</span>
+  </h3>
+</div>
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   
 <div id="imgModal" class="modal">
