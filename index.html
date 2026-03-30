@@ -286,6 +286,11 @@ h2 {
 .gallery img:hover {
   transform: scale(1.05);
 }
+  .menu a.active {
+  background: orange;
+  color: black;
+  font-weight: bold;
+}
 </style>
 
 </head>
@@ -603,6 +608,30 @@ function enableImageZoom() {
 
 // 👉 GỌI HÀM NGAY DƯỚI
 enableImageZoom();
+  const sections = document.querySelectorAll(".section");
+const menuLinks = document.querySelectorAll(".menu a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100; // trừ menu
+    const sectionHeight = section.offsetHeight;
+
+    if (window.scrollY >= sectionTop &&
+        window.scrollY < sectionTop + sectionHeight) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  menuLinks.forEach(link => {
+    link.classList.remove("active");
+
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+});
   function smoothScroll(targetY, duration = 600) {
   const startY = window.scrollY;
   const diff = targetY - startY;
