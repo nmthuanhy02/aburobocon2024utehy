@@ -301,6 +301,24 @@ h2 {
 #tailieu .gallery img:hover {
   transform: scale(1.08);
 }
+  /* ===== GRID RESPONSIVE TƯ LIỆU ===== */
+#tailieu .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+}
+
+#tailieu .gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+#tailieu .gallery img:hover {
+  transform: scale(1.05);
+}
 </style>
 
 </head>
